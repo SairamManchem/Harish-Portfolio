@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harish Cheekatla - Water Resource Engineer Portfolio</title>
+    <style>
+        :root {
+            --primary: #9B1068;
+            --secondary: #34A853;
+            --dark: #283E4A;
+            --light: #F5F5F5;
+            --text: #333333;
+            --text-light: #777777;
+            --white: #FFFFFF;
+            --border: #DDDDDD;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--secondary);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--white);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 20px;
+        }
+        
+        .nav-links a {
+            color: var(--white);
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover {
+            color: var(--light);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background-color: var(--white);
+            padding: 60px 0;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .hero-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid var(--white);
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .hero-text h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .hero-text h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        /* Sections */
+        section {
+            background-color: var(--white);
+            padding: 40px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        /* About */
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        /* Experience */
+        .experience-item {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+        
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .job-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .company {
+            font-size: 1.1rem;
+            color: var(--primary);
+        }
+        
+        .period {
+            color: var(--text-light);
+        }
+        
+        .responsibilities {
+            margin-top: 15px;
+        }
+        
+        .responsibilities ul {
+            padding-left: 20px;
+        }
+        
+        .responsibilities li {
+            margin-bottom: 8px;
+        }
+        
+        /* Skills */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .skill-category {
+            flex: 1 1 300px;
+        }
+        
+        .skill-category h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .skill-item {
+            background-color: var(--light);
+            color: var(--text);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        /* Education */
+        .education-item {
+            margin-bottom: 25px;
+        }
+        
+        .education-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .degree {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .institution {
+            font-size: 1.1rem;
+            color: var(--primary);
+        }
+        
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .project-card {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .project-info {
+            padding: 20px;
+        }
+        
+        .project-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+        
+        .project-tag {
+            background-color: var(--light);
+            color: var(--text-light);
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+        
+        /* Contact */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--border);
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.2);
+        }
+        
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary);
+        }
+
+        .company-logo {
+            width: 60px;
+            height: 60px;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .company-logo img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .experience-header-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .location {
+            color: var(--text-light);
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+        
+        .footer-links a {
+            color: var(--light);
+        }
+        
+        .copyright {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+            
+            .experience-header {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .experience-header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .company-logo {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">HC</a>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-image">
+                    <img src="/api/placeholder/400/400" alt="Harish Cheekatla">
+                </div>
+                <div class="hero-text">
+                    <h1>Harish Cheekatla</h1>
+                    <h2>Senior Project Engineer at RPS || MIEI</h2>
+                    <p>Water resource engineer with over 7.5 years' experience in storm water drainage projects, specializing in highway/railway infrastructure and innovative drainage solutions.</p>
+                    <div class="social-links">
+                        <a href="#" title="LinkedIn"><i>in</i></a>
+                        <a href="#" title="Email"><i>@</i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <p>I am a water resource engineer with over 7.5 years' experience in the field of storm water drainage projects majorly in Highway/Railway projects, with key tasks including storm-water drainage network analysis, culvert design, diversion channel, discharge assessment and various drainage proposals for protections works, underpasses and car parking layouts.</p>
+                <p>I also involved in the assignments related to infiltration/soakaways design, roadside hydrology, culvert design/optioneering, inlet spacing calculations & hydroplaning calculations. Acquired proficient knowledge in handling Civil 3D, Micro Drainage, SewerGEMS, HEC-HMS, HEC-RAS, HY-8, ArcGIS, Flow Master, and Flood modeler.</p>
+                <p>Currently based in Galway, Ireland, I bring specialized expertise in water management and drainage systems to infrastructure projects, focusing on sustainable solutions and climate change adaptation.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            
+            <div class="experience-item">
+                <div class="experience-header-container">
+                    <div class="company-logo">
+                        <img src="/api/placeholder/60/60" alt="RPS Logo">
+                    </div>
+                    <div>
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="job-title">Senior Project Engineer</h3>
+                                <p class="company">RPS</p>
+                            </div>
+                            <p class="period">Jul 2023 - Present</p>
+                        </div>
+                        <p class="location">Galway, County Galway, Ireland</p>
+                    </div>
+                </div>
+                <div class="responsibilities">
+                    <ul>
+                        <li>Lead drainage design for major infrastructure projects</li>
+                        <li>Develop comprehensive storm water management solutions</li>
+                        <li>Create technical reports and design documentation</li>
+                        <li>Implement climate change adaptation strategies in drainage designs</li>
+                        <li>Utilize specialized software including Navisworks, AutoCAD Civil 3D, and HEC-RAS</li>
+                    </ul>
+                </div>
+                <div class="skill-tags">
+                    <span class="skill-item">Culverts</span>
+                    <span class="skill-item">Navisworks</span>
+                    <span class="skill-item">Design Drawings</span>
+                    <span class="skill-item">Risk Management</span>
+                    <span class="skill-item">Highway Drainage</span>
+                    <span class="skill-item">AutoCAD Civil 3D</span>
+                    <span class="skill-item">Report Preparation</span>
+                    <span class="skill-item">Conceptual Design</span>
+                    <span class="skill-item">SWPPP</span>
+                    <span class="skill-item">Technical Reports</span>
+                    <span class="skill-item">Design Standards</span>
+                    <span class="skill-item">HEC-RAS</span>
+                    <span class="skill-item">Micro Drainage</span>
+                    <span class="skill-item">DMRB</span>
+                    <span class="skill-item">Climate Change Adaptation</span>
+                </div>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-header-container">
+                    <div class="company-logo">
+                        <img src="/api/placeholder/60/60" alt="Atkins Logo">
+                    </div>
+                    <div>
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="job-title">Engineer</h3>
+                                <p class="company">Atkins</p>
+                            </div>
+                            <p class="period">May 2021 - Jun 2023</p>
+                        </div>
+                        <p class="location">Bengaluru, Karnataka, India</p>
+                    </div>
+                </div>
+                <div class="responsibilities">
+                    <ul>
+                        <li>Designed drainage systems for infrastructure projects</li>
+                        <li>Conducted hydraulic analyses using specialized software</li>
+                        <li>Developed stormwater pollution prevention plans</li>
+                        <li>Created detailed design documentation and technical reports</li>
+                        <li>Implemented risk management strategies for drainage systems</li>
+                    </ul>
+                </div>
+                <div class="skill-tags">
+                    <span class="skill-item">Skill Development</span>
+                    <span class="skill-item">Design Drawings</span>
+                    <span class="skill-item">Hydraulics</span>
+                    <span class="skill-item">Risk Management</span>
+                    <span class="skill-item">SewerGEMS</span>
+                    <span class="skill-item">AutoCAD Civil 3D</span>
+                    <span class="skill-item">Report Preparation</span>
+                    <span class="skill-item">Conceptual Design</span>
+                    <span class="skill-item">Framework Design</span>
+                    <span class="skill-item">SWPPP</span>
+                    <span class="skill-item">Detailed Design</span>
+                    <span class="skill-item">Technical Reports</span>
+                    <span class="skill-item">Civil Engineers</span>
+                    <span class="skill-item">Design Standards</span>
+                    <span class="skill-item">Drainage Design</span>
+                    <span class="skill-item">Hydrology</span>
+                    <span class="skill-item">Micro Drainage</span>
+                </div>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-header-container">
+                    <div class="company-logo">
+                        <img src="/api/placeholder/60/60" alt="AECOM Logo">
+                    </div>
+                    <div>
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="job-title">Wet Utilities Engineer</h3>
+                                <p class="company">AECOM</p>
+                            </div>
+                            <p class="period">May 2020 - May 2021</p>
+                        </div>
+                        <p class="location">Bangalore, India</p>
+                    </div>
+                </div>
+                <div class="responsibilities">
+                    <ul>
+                        <li>Specialized in wet utilities engineering for infrastructure projects</li>
+                        <li>Developed drainage solutions using hydraulic principles</li>
+                        <li>Created technical documentation and design drawings</li>
+                        <li>Utilized specialized software including SewerGEMS and AutoCAD Civil 3D</li>
+                    </ul>
+                </div>
+                <div class="skill-tags">
+                    <span class="skill-item">Skill Development</span>
+                    <span class="skill-item">Design Drawings</span>
+                    <span class="skill-item">Hydraulics</span>
+                    <span class="skill-item">Risk Management</span>
+                    <span class="skill-item">SewerGEMS</span>
+                    <span class="skill-item">AutoCAD Civil 3D</span>
+                    <span class="skill-item">Report Preparation</span>
+                    <span class="skill-item">Conceptual Design</span>
+                    <span class="skill-item">SWPPP</span>
+                    <span class="skill-item">Detailed Design</span>
+                    <span class="skill-item">Technical Reports</span>
+                    <span class="skill-item">Drainage Design</span>
+                    <span class="skill-item">Hydrology</span>
+                    <span class="skill-item">Arcmap</span>
+                </div>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-header-container">
+                    <div class="company-logo">
+                        <img src="/api/placeholder/60/60" alt="Jacobs Logo">
+                    </div>
+                    <div>
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="job-title">Assistant Engineer Drainage</h3>
+                                <p class="company">Jacobs</p>
+                            </div>
+                            <p class="period">Jan 2018 - Mar 2020</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="responsibilities">
+                    <ul>
+                        <li>Assisted in drainage engineering projects</li>
+                        <li>Developed design drawings and documentation</li>
+                        <li>Worked with specialized hydraulic and drainage software</li>
+                        <li>Contributed to stormwater management planning</li>
+                    </ul>
+                </div>
+                <div class="skill-tags">
+                    <span class="skill-item">Skill Development</span>
+                    <span class="skill-item">Design Drawings</span>
+                    <span class="skill-item">Hydraulics</span>
+                    <span class="skill-item">Risk Management</span>
+                    <span class="skill-item">SewerGEMS</span>
+                    <span class="skill-item">AutoCAD Civil 3D</span>
+                    <span class="skill-item">Conceptual Design</span>
+                    <span class="skill-item">SWPPP</span>
+                    <span class="skill-item">Detailed Design</span>
+                    <span class="skill-item">Civil Engineers</span>
+                    <span class="skill-item">Design Standards</span>
+                    <span class="skill-item">Drainage Design</span>
+                    <span class="skill-item">Hydrology</span>
+                    <span class="skill-item">Arcmap</span>
+                    <span class="skill-item">Micro Drainage</span>
+                </div>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-header-container">
+                    <div class="company-logo">
+                        <img src="/api/placeholder/60/60" alt="PGET Logo">
+                    </div>
+                    <div>
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="job-title">Post Graduate Engineer Trainee in Drainage</h3>
+                                <p class="company">PGET</p>
+                            </div>
+                            <p class="period">Jul 2017 - Jan 2018</p>
+                        </div>
+                        <p class="location">Hyderabad, Telangana, India</p>
+                    </div>
+                </div>
+                <div class="responsibilities">
+                    <ul>
+                        <li>Received specialized training in drainage engineering</li>
+                        <li>Developed technical drawing skills using AutoCAD Civil 3D</li>
+                        <li>Learned hydraulic principles and stormwater management techniques</li>
+                        <li>Assisted in design documentation and concept development</li>
+                    </ul>
+                </div>
+                <div class="skill-tags">
+                    <span class="skill-item">Skill Development</span>
+                    <span class="skill-item">Design Drawings</span>
+                    <span class="skill-item">Hydraulics</span>
+                    <span class="skill-item">SewerGEMS</span>
+                    <span class="skill-item">AutoCAD Civil 3D</span>
+                    <span class="skill-item">Conceptual Design</span>
+                    <span class="skill-item">SWPPP</span>
+                    <span class="skill-item">Detailed Design</span>
+                </div>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-header-container">
+                    <div class="company-logo">
+                        <img src="/api/placeholder/60/60" alt="KERS Logo">
+                    </div>
+                    <div>
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="job-title">Intern</h3>
+                                <p class="company">Karnataka Engineering Research Station</p>
+                            </div>
+                            <p class="period">May 2016 - Jul 2016</p>
+                        </div>
+                        <p class="location">Mysuru Area, India</p>
+                    </div>
+                </div>
+                <div class="responsibilities">
+                    <ul>
+                        <li>Designed spillway profiles to address erosion issues caused by negative pressure</li>
+                        <li>Conducted outlier treatment and L-moments analysis of data to determine maximum flood levels</li>
+                        <li>Applied civil engineering principles to water resource management challenges</li>
+                    </ul>
+                </div>
+                <div class="skill-tags">
+                    <span class="skill-item">Civil Engineers</span>
+                    <span class="skill-item">Spillway Design</span>
+                    <span class="skill-item">Flood Analysis</span>
+                </div>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-header-container">
+                    <div class="company-logo">
+                        <img src="/api/placeholder/60/60" alt="INDIRA SAGAR Logo">
+                    </div>
+                    <div>
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="job-title">Intern</h3>
+                                <p class="company">INDIRA SAGAR POLAVARAM PROJECT</p>
+                            </div>
+                            <p class="period">May 2013 - Jun 2013</p>
+                        </div>
+                        <p class="location">East Godavari, Andhra Pradesh, India</p>
+                    </div>
+                </div>
+                <div class="responsibilities">
+                    <ul>
+                        <li>Participated in canal lining works and cross drainage works</li>
+                        <li>Gained practical experience in civil engineering applications for major irrigation projects</li>
+                        <li>Developed understanding of water conveyance structures and drainage systems</li>
+                    </ul>
+                </div>
+                <div class="skill-tags">
+                    <span class="skill-item">Civil Engineers</span>
+                    <span class="skill-item">Canal Lining</span>
+                    <span class="skill-item">Cross Drainage</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Design & Analysis</h3>
+                    <div class="skills-list">
+                        <span class="skill-item">Culvert Design</span>
+                        <span class="skill-item">Highway Drainage</span>
+                        <span class="skill-item">Storm Water Drainage</span>
+                        <span class="skill-item">Hydraulics</span>
+                        <span class="skill-item">Hydrology</span>
+                        <span class="skill-item">Diversion Channel</span>
+                        <span class="skill-item">Discharge Assessment</span>
+                        <span class="skill-item">Infiltration Design</span>
+                        <span class="skill-item">Soakaways Design</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Software Tools</h3>
+                    <div class="skills-list">
+                        <span class="skill-item">AutoCAD Civil 3D</span>
+                        <span class="skill-item">Micro Drainage</span>
+                        <span class="skill-item">SewerGEMS</span>
+                        <span class="skill-item">HEC-HMS</span>
+                        <span class="skill-item">HEC-RAS</span>
+                        <span class="skill-item">HY-8</span>
+                        <span class="skill-item">ArcGIS</span>
+                        <span class="skill-item">Arcmap</span>
+                        <span class="skill-item">Flow Master</span>
+                        <span class="skill-item">Flood Modeler</span>
+                        <span class="skill-item">Navisworks</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Project Management</h3>
+                    <div class="skills-list">
+                        <span class="skill-item">Risk Management</span>
+                        <span class="skill-item">Report Preparation</span>
+                        <span class="skill-item">Technical Reports</span>
+                        <span class="skill-item">Conceptual Design</span>
+                        <span class="skill-item">Detailed Design</span>
+                        <span class="skill-item">Design Standards</span>
+                        <span class="skill-item">DMRB</span>
+                        <span class="skill-item">ProjectWise</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Environmental</h3>
+                    <div class="skills-list">
+                        <span class="skill-item">Stormwater Pollution Prevention Plan (SWPPP)</span>
+                        <span class="skill-item">Climate Change Adaptation</span>
+                        <span class="skill-item">Sustainable Drainage Systems</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            
+            <div class="education-item">
+                <h3 class="degree">Master of Technology (MTech), Water Resources Engineering</h3>
+                <p class="institution">National Institute of Technology Warangal</p>
+                <p class="period">2015 - 2017</p>
+                <p>Specialized in water resources engineering with advanced study in hydraulics, hydrology, and drainage systems.</p>
+            </div>
+            
+            <div class="education-item">
+                <h3 class="degree">Bachelor of Technology (BTech), Civil Engineering</h3>
+                <p class="institution">RAJIV GANDHI UNIVERSITY OF KNOWLEDGE TECHNOLOGIES, NUZVID</p>
+                <p class="period">2010 - 2014</p>
+                <p>Completed undergraduate studies in civil engineering with foundational knowledge in structural design, water resources, and environmental engineering.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Certifications Section -->
+    <section id="certifications">
+        <div class="container">
+            <h2 class="section-title">Licenses & Certifications</h2>
+            
+            <div class="experience-item">
+                <div class="experience-header-container">
+                    <div class="company-logo">
+                        <img src="/api/placeholder/60/60" alt="Hunter Industries Logo">
+                    </div>
+                    <div>
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="job-title">IRRIGATION DESIGNER</h3>
+                                <p class="company">Hunter Industries</p>
+                            </div>
+                            <p class="period">Issued Oct 2020</p>
+                        </div>
+                    </div>
+                </div>
+                <p>Professional certification in irrigation system design principles and techniques</p>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-header-container">
+                    <div class="company-logo">
+                        <img src="/api/placeholder/60/60" alt="LinkedIn Logo">
+                    </div>
+                    <div>
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="job-title">Excel: Power Pivot for Beginners</h3>
+                                <p class="company">LinkedIn</p>
+                            </div>
+                            <p class="period">Issued Jun 2020</p>
+                        </div>
+                    </div>
+                </div>
+                <p>Certification in advanced Excel data analysis using Power Pivot tools</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="/api/placeholder/400/300" alt="Highway Drainage Project">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Highway Drainage System Design</h3>
+                        <p>Comprehensive drainage design for a major highway infrastructure project, including culvert design, stormwater management, and flood risk assessment.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Highway Drainage</span>
+                            <span class="project-tag">Culvert Design</span>
+                            <span class="project-tag">Flood Risk</span>
+                            <span class="project-tag">AutoCAD Civil 3D</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="/api/placeholder/400/300" alt="Railway Project">
+                    </div>
+                    <div class="project-info">
+                        <h3
